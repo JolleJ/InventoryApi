@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JolleJ/InventoryApi#readme",
   "dependencies": {
+    "@types/pg": "^7.4.11",
     "aws-sdk": "^2.386.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
