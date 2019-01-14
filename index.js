@@ -20,8 +20,13 @@ app.get('/status', function (req, res) {
   res.sendStatus(200)
 });
 
+app.get('/test', function (req, res) {
+  
+});
+
+
 app.get('/availability', function (req, res) {
-  res.send("This api call is to get availability")
+  res.json()
 });
 
 app.post('/increase', function (req, res) {
