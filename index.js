@@ -19,11 +19,29 @@ client.connect();
 console.log("Connected")
 
 /*app.get('/status', function (req, res) {
-  apiController.status();  
+  apiController.status();
 });*/
 
 app.get('/availability', function (req, res) {
-  res.send("This api call is to get availability")
+  pg.connect(connstring, (err, client, done) => {
+      // Handle connection errors
+      if(err) {
+        done();
+        console.log(err);
+        return res.status(500).json({success: false, data: err});
+      }
+      // SQL Query > Select Data
+      const query = client.query('SELECT * FROM .........');
+      // Stream results back one row at a time
+      query.on('row', (row) => {
+        results.push(row);
+      });
+      // After all data is returned, close connection and return results
+      query.on('end', () => {
+        done();
+        return res.json(results);
+      });
+    });
 });
 
 app.post('/increase', function (req, res) {
