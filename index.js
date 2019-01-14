@@ -13,14 +13,14 @@ const client1 = new pg.Client({
   ssl: true,
 });
 
-client1.connect();
+//client1.connect();
 console.log("Connected")
 
 app.get('/status', function (req, res) {
   res.sendStatus(200);
 });
 
-/*app.get('/availability', function (req, res) {
+app.get('/availability', function (req, res) {
   res.json()
   client1.connect(connstring, (err, client, done) => {
       // Handle connection errors
@@ -41,7 +41,7 @@ app.get('/status', function (req, res) {
         return res.json(results);
       });
     });
-});*/
+});
 
 app.post('/increase', function (req, res) {
   res.send("This api call is for increase availability")
