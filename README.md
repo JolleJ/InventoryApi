@@ -2,6 +2,8 @@
 
 https://serverless.com/blog/serverless-express-rest-api/
 
+https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/status
+
 
 Inventory:
   - Product Id
