@@ -31,15 +31,16 @@ app.get('/availability', function (req, res) {
       }
       // SQL Query > Select Data
       const query = client.query('SELECT * FROM inventory_table');
+      return res.send("Got inventory");
       // Stream results back one row at a time
-      query.on('row', (row) => {
+      /*query.on('row', (row) => {
         results.push(row);
       });
       // After all data is returned, close connection and return results
       query.on('end', () => {
         done();
         return res.json(results);
-      });
+      });*/
     });
 });
 
