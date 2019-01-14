@@ -1,4 +1,3 @@
-import * as apiController from "./controllers/ApiController.js";
 
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
@@ -16,11 +15,15 @@ const client = new pg.Client({
 });
 
 client.connect();
-console.log("Connected")
+console.log("Connected");
 
-/*app.get('/status', function (req, res) {
-  apiController.status();  
-});*/
+app.get('/status', function(req, res){
+  res.sendStatus(200);
+});
+
+app.get('/statusTest', function(req, res){
+  controllerapi.status;
+});
 
 app.get('/availability', function (req, res) {
   res.send("This api call is to get availability")

@@ -92,7 +92,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-inventory-service/dev/1547462036505-2019-01-14T10:33:56.505Z/api-inventory-service.zip"
+          "S3Key": "serverless/api-inventory-service/dev/1547463481018-2019-01-14T10:58:01.018Z/api-inventory-service.zip"
         },
         "FunctionName": "api-inventory-service-dev-app",
         "Handler": "index.handler",
@@ -111,14 +111,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "AppLambdaVersions2aZCQjLC55kJfNkm2YrJSiwLJT6tRuPGLL1QwKqBw": {
+    "AppLambdaVersionQCFBUscAgXMNFPqZivZRrBHLLdMocjzKp4na7WUFfg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "n0gkf3MfwLP1dqyr1ZUJRtxw2Bl9z4tyUC5xvgd2nmk="
+        "CodeSha256": "+BMLAtaBaSJeC5++xmkDxBmCdaF/by/Ua9KKT5/A6Po="
       }
     },
     "ApiGatewayRestApi": {
@@ -236,7 +236,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1547462036639": {
+    "ApiGatewayDeployment1547463481165": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -306,7 +306,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersions2aZCQjLC55kJfNkm2YrJSiwLJT6tRuPGLL1QwKqBw"
+        "Ref": "AppLambdaVersionQCFBUscAgXMNFPqZivZRrBHLLdMocjzKp4na7WUFfg"
       }
     },
     "ServiceEndpoint": {
