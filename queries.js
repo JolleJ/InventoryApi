@@ -8,11 +8,11 @@ const client = new Client({
 client.connect();
 
 const getAvailability = (req, res) => {
-    client.query('SELECT * FROM inventory_table', (error, results)=>{
+    client.query('SELECT * FROM inventory_table;', (error, results)=>{
         if(error) {
             throw error;
         }
-        res.status(200).json(results.row);
+        res.status(200).json(results.rows);
     });
 }
 
