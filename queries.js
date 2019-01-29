@@ -16,6 +16,15 @@ const getAvailability = (req, res) => {
     });
 }
 
+const decrease = (req, res) => {
+    client.query('UPDATE inventory_table SET availability = availability - 1;', (error, results) =>{
+        if(error) {
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+}
+
 
 module.exports = {
     getAvailability,
