@@ -28,8 +28,7 @@ app.use(function(req, res, next){
 
 app.get('/availability', db.getAvailability);
 
-app.post('/decrease', function (req, res) {
-  res.send("This api call is for increase decrease")
-});
+app.get('/decrease', db.decrease);
+
 
 module.exports.handler = serverless(app);

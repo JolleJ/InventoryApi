@@ -17,7 +17,8 @@ const getAvailability = (req, res) => {
 }
 
 const decrease = (req, res) => {
-    client.query('UPDATE inventory_table SET availability = availability - 1;', (error, results) =>{
+    const amount = req.body.amount;
+    client.query('UPDATE inventory_table SET availability = availability - 1 where id = $1;', [amount], (error, results) =>{
         if(error) {
             throw error;
         }
@@ -28,4 +29,5 @@ const decrease = (req, res) => {
 
 module.exports = {
     getAvailability,
+    decrease,
 }
