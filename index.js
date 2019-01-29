@@ -4,8 +4,7 @@ const express = require('express');
 const app = express();
 const AWS = require('aws-sdk');
 const pg = require('pg');
-
-var connstring = "postgres://qogimifkyheoia:38fea64585d86a1736275216e6372c9462cbb13c077641fdbd391b0fbd3892b3@ec2-79-125-4-96.eu-west-1.compute.amazonaws.com:5432/d9ohsl1mka5i8o";
+const db = require('./queries');
 
 
 const client1 = new pg.Client({
@@ -20,33 +19,14 @@ app.get('/status', function (req, res) {
   res.sendStatus(200);
 });
 
-app.get('/availability', function (req, res) {
-  res.json()
-  client1.connect(connstring, (err, client, done) => {
-      // Handle connection errors
-      if(err) {
-        done();
-        console.log(err);
-        return res.status(500).json({success: false, data: err});
-      }
-      // SQL Query > Select Data
-      const query = client.query('SELECT * FROM inventory_table');
-      return res.send("Got inventory");
-      // Stream results back one row at a time
-      /*query.on('row', (row) => {
-        results.push(row);
-      });
-      // After all data is returned, close connection and return results
-      query.on('end', () => {
-        done();
-        return res.json(results);
-      });*/
-    });
+app.use(function(req, res, next){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+  next();
 });
 
-app.post('/increase', function (req, res) {
-  res.send("This api call is for increase availability")
-});
+app.get('/availability', db.getAvailability);
 
 app.post('/decrease', function (req, res) {
   res.send("This api call is for increase decrease")
