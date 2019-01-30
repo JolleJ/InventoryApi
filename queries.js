@@ -19,7 +19,7 @@ const getAvailability = (req, res) => {
 const decrease = (req, res) => {
     const amount = req.body.amount;
     const id = req.body.id;
-    client.query('UPDATE inventory_table SET availability = availability - $1  where id = $2;', [amount, id], (error, results) =>{
+    client.query('UPDATE inventory_table SET availability = availability - $1 where id = $2;', [amount, id], (error, results) =>{
         if(error) {
             throw error;
         }
@@ -30,7 +30,7 @@ const decrease = (req, res) => {
 const increase = (req, res) => {
     const amount = req.body.amount;
     const id = req.body.id;
-    client.query('UPDATE inventory_table SET availability = availability + $1 where id = $2;', [amount, id], (error, results) =>{
+    client.query('UPDATE inventory_table SET availability = availability + $1 where id = $2 RETURNING availability;', [amount, id], (error, results) =>{
         if(error) {
             throw error;
         }
