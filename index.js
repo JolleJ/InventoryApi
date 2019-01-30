@@ -12,12 +12,11 @@ const client1 = new pg.Client({
   ssl: true,
 });
 
-//client1.connect();
-console.log("Connected")
-
-app.get('/status', function (req, res) {
-  res.sendStatus(200);
-});
+app.use(
+  bodyParser.urlencoded({
+      extended: false,
+  })
+);
 
 app.use(function(req, res, next){
   res.header("Access-Control-Allow-Origin", "*");
@@ -25,6 +24,14 @@ app.use(function(req, res, next){
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
   next();
 });
+//client1.connect();
+console.log("Connected")
+
+app.get('/status', function (req, res) {
+  res.sendStatus(200);
+});
+
+
 
 app.get('/availability', db.getAvailability);
 
