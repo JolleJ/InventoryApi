@@ -18,7 +18,17 @@ const getAvailability = (req, res) => {
 
 const decrease = (req, res) => {
     const amount = req.body.amount;
-    client.query('UPDATE inventory_table SET availability = availability - 1 where id = $1;', [amount], (error, results) =>{
+    client.query('UPDATE inventory_table SET availability = availability -$1  where id = $2;', [amount, id], (error, results) =>{
+        if(error) {
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+}
+
+const incrase = (req, res) => {
+    const amount = req.body.amount;
+    client.query('UPDATE inventory_table SET availability = availability - $1 where id = $2;', [amount, id], (error, results) =>{
         if(error) {
             throw error;
         }
