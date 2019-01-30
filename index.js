@@ -28,8 +28,8 @@ app.use(function(req, res, next){
 
 app.get('/availability', db.getAvailability);
 
-app.post('/decrease', db.decrease);
+app.get('/decrease', db.decrease);
 
-app.post('/increase', db.increase);
+app.get('/increase', db.increase);
 
 module.exports.handler = serverless(app);

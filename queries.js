@@ -18,7 +18,8 @@ const getAvailability = (req, res) => {
 
 const decrease = (req, res) => {
     const amount = req.body.amount;
-    client.query('UPDATE inventory_table SET availability = availability -$1  where id = $2;', [amount, id], (error, results) =>{
+    const id = req.body.id;
+    client.query('UPDATE inventory_table SET availability = availability - $1  where id = $2;', [amount, id], (error, results) =>{
         if(error) {
             throw error;
         }
@@ -26,9 +27,10 @@ const decrease = (req, res) => {
     });
 }
 
-const incrase = (req, res) => {
+const increase = (req, res) => {
     const amount = req.body.amount;
-    client.query('UPDATE inventory_table SET availability = availability - $1 where id = $2;', [amount, id], (error, results) =>{
+    const id = req.body.id;
+    client.query('UPDATE inventory_table SET availability = availability + $1 where id = $2;', [amount, id], (error, results) =>{
         if(error) {
             throw error;
         }
@@ -40,4 +42,5 @@ const incrase = (req, res) => {
 module.exports = {
     getAvailability,
     decrease,
+    increase,
 }
