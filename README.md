@@ -11,6 +11,11 @@ Inventory:
   - Availability
 
 Functions:
+  - Add product
+    - Product id
+    + Price
+    + Availability
+
   - Get Availability
     - Product id 
     + Price
@@ -28,3 +33,6 @@ Functions:
 
 Security:
   - API key for increase and decrease availability
+
+
+DB 
