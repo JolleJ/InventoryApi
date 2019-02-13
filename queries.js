@@ -7,6 +7,17 @@ const client = new Client({
 
 client.connect();
 
+const createProduct = (req, res) => {
+    const price = req.body.price;
+    const amount = req.body.amount;
+    client.query('INSERT INTO inventory_table (price, availability) VALUES ($1, $2);', [price, amount], (error, results)=>{
+        if(error) {
+            throw error;
+        }
+        res.status(201).json({message: "Product added"});
+    });
+}
+
 const getAvailability = (req, res) => {
     client.query('SELECT * FROM inventory_table;', (error, results)=>{
         if(error) {
@@ -40,6 +51,7 @@ const increase = (req, res) => {
 
 
 module.exports = {
+    createProduct,
     getAvailability,
     decrease,
     increase,

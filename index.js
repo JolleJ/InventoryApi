@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -16,36 +12,21 @@ const client1 = new pg.Client({
   ssl: true,
 });
 
-<<<<<<< HEAD
 //client.connect();
 console.log("Connected");
 
 app.get('/status', function(req, res){
   res.sendStatus(200);
-=======
-app.use(bodyParser.json());
-
-app.use(function(req, res, next){
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
-  next();
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
 });
 //client1.connect();
 console.log("Connected")
 
-<<<<<<< HEAD
 
 app.post('/increase', function (req, res) {
   res.send("This api call is for increase availability")
-=======
-app.get('/status', function (req, res) {
-  res.sendStatus(200);
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
 });
 
-
+app.post("/createProduct", db.createProduct);
 
 app.get('/availability', db.getAvailability);
 
