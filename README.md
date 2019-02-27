@@ -7,21 +7,21 @@ https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/status
 BASE URL https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/
 Api-key: jolleisthebest
 
-GET /availability
+GET /availability</br>
     Return json string with:</br>
-    -id
-    -price
-    availability
+    -id</br>
+    -price</br>
     
-POST /decrease, Expect Api-key header.
-Takes json string with:
-    -id
-    -amount
     
-POST /increase, Expect Api-key header.
-Takes json string with:
-    -id
-    -amount
+POST /decrease, Expect Api-key header.</br>
+Takes json string with:</br>
+    -id</br>
+    -amount</br>
+    
+POST /increase, Expect Api-key header.</br>
+Takes json string with:</br>
+    -id</br>
+    -amount</br>
 
     
 
