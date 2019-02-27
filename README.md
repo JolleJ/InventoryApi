@@ -8,7 +8,7 @@ BASE URL https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/
 Api-key: jolleisthebest
 
 GET /availability
-    Return json string with:
+    Return json string with:</br>
     -id
     -price
     availability
