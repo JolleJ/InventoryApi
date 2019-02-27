@@ -3,7 +3,18 @@
   "Description": "The AWS CloudFormation template for this Serverless application",
   "Resources": {
     "ServerlessDeploymentBucket": {
-      "Type": "AWS::S3::Bucket"
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "AES256"
+              }
+            }
+          ]
+        }
+      }
     },
     "AppLogGroup": {
       "Type": "AWS::Logs::LogGroup",
@@ -92,7 +103,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-inventory-service/dev/1550080037097-2019-02-13T17:47:17.097Z/api-inventory-service.zip"
+          "S3Key": "serverless/api-inventory-service/dev/1551279166856-2019-02-27T14:52:46.856Z/api-inventory-service.zip"
         },
         "FunctionName": "api-inventory-service-dev-app",
         "Handler": "index.handler",
@@ -111,14 +122,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "AppLambdaVersionZ25qyAJ6gqhPiJU2Gji73LI5u1PMP6u2MIeno3eS0cY": {
+    "AppLambdaVersionUVXpMwcSdeVwyHcpAfyFMtIUyIjqZ8lDhkeAFVE2Kg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "ykVVC6dKzz2jhgj9xdHYMHVN7iEhvzedchPTwrq81nA="
+        "CodeSha256": "yd7YLs4sKnPpIjAQOu8MVTjuL734Ojs1YVmBUFHGvxs="
       }
     },
     "ApiGatewayRestApi": {
@@ -236,7 +247,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1550080037236": {
+    "ApiGatewayDeployment1551279166996": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -306,7 +317,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionZ25qyAJ6gqhPiJU2Gji73LI5u1PMP6u2MIeno3eS0cY"
+        "Ref": "AppLambdaVersionUVXpMwcSdeVwyHcpAfyFMtIUyIjqZ8lDhkeAFVE2Kg"
       }
     },
     "ServiceEndpoint": {

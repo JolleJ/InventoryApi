@@ -59,6 +59,7 @@ const increase = (req, res) => {
 
 
 module.exports = {
+    authentication,
     createProduct,
     getAvailability,
     decrease,
