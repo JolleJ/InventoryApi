@@ -4,6 +4,27 @@ https://serverless.com/blog/serverless-express-rest-api/
 
 https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/status
 
+BASE URL https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/
+Api-key: jolleisthebest
+
+GET /availability
+    Return json string with:
+    -id
+    -price
+    availability
+    
+POST /decrease, Expect Api-key header.
+Takes json string with:
+    -id
+    -amount
+    
+POST /increase, Expect Api-key header.
+Takes json string with:
+    -id
+    -amount
+
+    
+
 
 Inventory:
   - Product Id
