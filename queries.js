@@ -7,6 +7,14 @@ const client = new Client({
 
 client.connect();
 
+const authentication = (req, res, next) => {
+    if(req.header("Api-key") != "jolleisthebest"){
+        err = new Error("Not authorized");
+        return next(err);
+    }
+    return next();
+}
+
 const createProduct = (req, res) => {
     const price = req.body.price;
     const amount = req.body.amount;
