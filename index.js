@@ -27,7 +27,7 @@ app.post("/createProduct", db.authentication, db.createProduct);
 
 app.get('/availability', db.getAvailability);
 
-app.get('/availability/:id', db.getAvailability);
+app.get('/availability/:id', db.getAvailabilitySpecific);
 
 app.post('/decrease', db.authentication, db.decrease);
 
