@@ -4,6 +4,37 @@ https://serverless.com/blog/serverless-express-rest-api/
 
 https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/status
 
+BASE URL: https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/¨
+
+Api-key="jolleisthebest" 
+
+API CALLS:
+
+/availability
+
+Response:
+  -json data
+
+/availaility/{id}
+
+Response:
+  -Specific json data
+
+/increase, Requirement: json {id, amount}
+
+Response:
+  -200ok
+
+/decrease, Requirement: json {id, amount}
+
+Response:
+  -200ok
+
+/createProduct Requirement: json {price, amount}
+
+Response:
+  -201 Added
+
 
 Inventory:
   - Product Id
