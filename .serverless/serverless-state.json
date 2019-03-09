@@ -17,18 +17,7 @@
         "Description": "The AWS CloudFormation template for this Serverless application",
         "Resources": {
           "ServerlessDeploymentBucket": {
-            "Type": "AWS::S3::Bucket",
-            "Properties": {
-              "BucketEncryption": {
-                "ServerSideEncryptionConfiguration": [
-                  {
-                    "ServerSideEncryptionByDefault": {
-                      "SSEAlgorithm": "AES256"
-                    }
-                  }
-                ]
-              }
-            }
+            "Type": "AWS::S3::Bucket"
           },
           "AppLogGroup": {
             "Type": "AWS::Logs::LogGroup",
@@ -117,7 +106,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/api-inventory-service/dev/1551279461590-2019-02-27T14:57:41.590Z/api-inventory-service.zip"
+                "S3Key": "serverless/api-inventory-service/dev/1552138047309-2019-03-09T13:27:27.309Z/api-inventory-service.zip"
               },
               "FunctionName": "api-inventory-service-dev-app",
               "Handler": "index.handler",
@@ -136,14 +125,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AppLambdaVersionSrrEN30QAFEbUxFXgShQ91yiNhGEKHruzQ4ZMhNXgQ": {
+          "AppLambdaVersioncaOTr9vB0484Rv9KsUGA99OwyMXa7GPjxnEl7P0EJ9U": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "DtnHqVyQV7garkASpcdg/M5Tncc5SjScDU93Icnz38M="
+              "CodeSha256": "EkOPWCi26thC1rNwEqCCicyiagPcTwVQj/dmxFUnaHU="
             }
           },
           "ApiGatewayRestApi": {
@@ -261,7 +250,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1551279461730": {
+          "ApiGatewayDeployment1552138047386": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -331,7 +320,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionSrrEN30QAFEbUxFXgShQ91yiNhGEKHruzQ4ZMhNXgQ"
+              "Ref": "AppLambdaVersioncaOTr9vB0484Rv9KsUGA99OwyMXa7GPjxnEl7P0EJ9U"
             }
           },
           "ServiceEndpoint": {
@@ -360,18 +349,7 @@
         "Description": "The AWS CloudFormation template for this Serverless application",
         "Resources": {
           "ServerlessDeploymentBucket": {
-            "Type": "AWS::S3::Bucket",
-            "Properties": {
-              "BucketEncryption": {
-                "ServerSideEncryptionConfiguration": [
-                  {
-                    "ServerSideEncryptionByDefault": {
-                      "SSEAlgorithm": "AES256"
-                    }
-                  }
-                ]
-              }
-            }
+            "Type": "AWS::S3::Bucket"
           }
         },
         "Outputs": {
@@ -407,10 +385,10 @@
     "app": "api-inventory",
     "tenant": "jollej",
     "layers": {},
-    "artifact": "/home/jolle/Desktop/Nodejs/Inventory/.serverless/api-inventory-service.zip"
+    "artifact": "C:\\Users\\Joel\\Desktop\\Inventory\\.serverless\\api-inventory-service.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/api-inventory-service/dev/1551279461590-2019-02-27T14:57:41.590Z",
+    "artifactDirectoryName": "serverless/api-inventory-service/dev/1552138047309-2019-03-09T13:27:27.309Z",
     "artifact": "api-inventory-service.zip"
   }
 }

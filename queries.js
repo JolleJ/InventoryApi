@@ -12,7 +12,7 @@ const client = new Client({
 
 client.connect();
 
-const checkIfExists = (req, res, next) => {
+/*const checkIfExists = (req, res, next) => {
     request('PRODUCTS API PRODUCTS HERE', { json: true }, (err, res, body) => {
         if (err) { 
             return console.log(err); 
@@ -24,7 +24,7 @@ const checkIfExists = (req, res, next) => {
         //console.log(body.url);
         //console.log(body.explanation);
       });  
-}
+}*/
 
 const authentication = (req, res, next) => {
     if(req.header("Api-key") != process.env.api_key){
@@ -88,11 +88,8 @@ const increase = (req, res) => {
 
 
 module.exports = {
-<<<<<<< HEAD
     getAvailabilitySpecific,
-=======
     authentication,
->>>>>>> 39a3bf95fa58004e7a05e80b43d37e02998ca1db
     createProduct,
     getAvailability,
     decrease,
