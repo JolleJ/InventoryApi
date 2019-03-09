@@ -53,6 +53,16 @@ const getAvailability = (req, res) => {
     });
 }
 
+const getAvailabilitySpecific = (req, res) => {
+    const id = parseInt(req.params.id);
+    client.query('SELECT * FROM inventory_table WHERE id = $1;', [id], (error, results)=>{
+        if(error) {
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    });
+}
+
 const decrease = (req, res) => {
     const amount = req.body.amount;
     const id = req.body.id;
@@ -77,6 +87,7 @@ const increase = (req, res) => {
 
 
 module.exports = {
+    getAvailabilitySpecific,
     authentication,
     createProduct,
     getAvailability,

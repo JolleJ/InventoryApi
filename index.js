@@ -22,13 +22,12 @@ app.get('/status', function(req, res){
 console.log("Connected")
 
 
-app.post('/increase', function (req, res) {
-  res.send("This api call is for increase availability")
-});
 
 app.post("/createProduct", db.authentication, db.createProduct);
 
 app.get('/availability', db.getAvailability);
+
+app.get('/availability/:id', db.getAvailability);
 
 app.post('/decrease', db.authentication, db.decrease);
 
