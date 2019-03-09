@@ -9,14 +9,13 @@ GET /availability</br>
     Return json string with:</br>
     -id</br>
     -price</br>
-<<<<<<< HEAD
-=======
+
 
 GET /availability/{id}</br>
     Return json string with:</br>
     -id</br>
     -price</br>
->>>>>>> 720d773f3c9b6d13e83dfb0d36c357b97fed29ef
+
     
     
 POST /decrease, Expect Api-key header.</br>
@@ -59,11 +58,7 @@ Functions:
     + new amount
 
 Security:
-<<<<<<< HEAD
+
   - API key for increase and decrease availability
 
 
-DB 
-=======
-  - API key for increase and decrease availability
->>>>>>> 720d773f3c9b6d13e83dfb0d36c357b97fed29ef
