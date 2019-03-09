@@ -39,7 +39,16 @@ app.get('/availability', db.getAvailability);
 app.get('/availability/:id', db.getAvailabilitySpecific);
 
 app.post('/decrease', db.decrease);
+app.post('/increase', function (req, res) {
+  res.send("This api call is for increase availability")
+});
 
-app.post('/increase', db.increase);
+app.post("/createProduct", db.authentication, db.createProduct);
+
+app.get('/availability', db.getAvailability);
+
+app.post('/decrease', db.authentication, db.decrease);
+
+app.post('/increase', db.authentication, db.increase);
 
 module.exports.handler = serverless(app);

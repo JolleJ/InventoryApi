@@ -1,4 +1,8 @@
 const { Client } = require('pg');
+const request = require('request')
+
+require('dotenv').config();
+
 
 
 const client = new Client({
@@ -7,6 +11,28 @@ const client = new Client({
 });
 
 client.connect();
+
+const checkIfExists = (req, res, next) => {
+    request('PRODUCTS API PRODUCTS HERE', { json: true }, (err, res, body) => {
+        if (err) { 
+            return console.log(err); 
+        }
+        //Check if product exists, IF NOT add to database
+
+
+
+        //console.log(body.url);
+        //console.log(body.explanation);
+      });  
+}
+
+const authentication = (req, res, next) => {
+    if(req.header("Api-key") != process.env.api_key){
+        err = new Error("Not authorized");
+        return next(err);
+    }
+    return next();
+}
 
 const createProduct = (req, res) => {
     const price = req.body.price;
@@ -62,7 +88,11 @@ const increase = (req, res) => {
 
 
 module.exports = {
+<<<<<<< HEAD
     getAvailabilitySpecific,
+=======
+    authentication,
+>>>>>>> 39a3bf95fa58004e7a05e80b43d37e02998ca1db
     createProduct,
     getAvailability,
     decrease,

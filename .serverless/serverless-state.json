@@ -17,7 +17,18 @@
         "Description": "The AWS CloudFormation template for this Serverless application",
         "Resources": {
           "ServerlessDeploymentBucket": {
-            "Type": "AWS::S3::Bucket"
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+              "BucketEncryption": {
+                "ServerSideEncryptionConfiguration": [
+                  {
+                    "ServerSideEncryptionByDefault": {
+                      "SSEAlgorithm": "AES256"
+                    }
+                  }
+                ]
+              }
+            }
           },
           "AppLogGroup": {
             "Type": "AWS::Logs::LogGroup",
@@ -106,11 +117,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-<<<<<<< HEAD
-                "S3Key": "serverless/api-inventory-service/dev/1547470410194-2019-01-14T12:53:30.194Z/api-inventory-service.zip"
-=======
-                "S3Key": "serverless/api-inventory-service/dev/1548835652971-2019-01-30T08:07:32.971Z/api-inventory-service.zip"
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
+                "S3Key": "serverless/api-inventory-service/dev/1551279461590-2019-02-27T14:57:41.590Z/api-inventory-service.zip"
               },
               "FunctionName": "api-inventory-service-dev-app",
               "Handler": "index.handler",
@@ -129,22 +136,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-<<<<<<< HEAD
-          "AppLambdaVersionwPv5KLNb8IJwPe55gp5MM7oCn8CGrnbb4ofIzOcps": {
-=======
-          "AppLambdaVersionHPEtgcbROmzw8vcAhXafJkE6fkYDBJCjQZ9iHrBTlx0": {
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
+          "AppLambdaVersionSrrEN30QAFEbUxFXgShQ91yiNhGEKHruzQ4ZMhNXgQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-<<<<<<< HEAD
-              "CodeSha256": "IpaJyvmDn2wthQF53th2TEcAhfNH8mOUW+WeKPoQDek="
-=======
-              "CodeSha256": "udN9U20uaNAUIQJWpo8PCw8UqwOCY6rEk17deh7iHiM="
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
+              "CodeSha256": "DtnHqVyQV7garkASpcdg/M5Tncc5SjScDU93Icnz38M="
             }
           },
           "ApiGatewayRestApi": {
@@ -262,11 +261,7 @@
               "MethodResponses": []
             }
           },
-<<<<<<< HEAD
-          "ApiGatewayDeployment1547470410797": {
-=======
-          "ApiGatewayDeployment1548835653029": {
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
+          "ApiGatewayDeployment1551279461730": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -336,11 +331,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-<<<<<<< HEAD
-              "Ref": "AppLambdaVersionwPv5KLNb8IJwPe55gp5MM7oCn8CGrnbb4ofIzOcps"
-=======
-              "Ref": "AppLambdaVersionHPEtgcbROmzw8vcAhXafJkE6fkYDBJCjQZ9iHrBTlx0"
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
+              "Ref": "AppLambdaVersionSrrEN30QAFEbUxFXgShQ91yiNhGEKHruzQ4ZMhNXgQ"
             }
           },
           "ServiceEndpoint": {
@@ -369,7 +360,18 @@
         "Description": "The AWS CloudFormation template for this Serverless application",
         "Resources": {
           "ServerlessDeploymentBucket": {
-            "Type": "AWS::S3::Bucket"
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+              "BucketEncryption": {
+                "ServerSideEncryptionConfiguration": [
+                  {
+                    "ServerSideEncryptionByDefault": {
+                      "SSEAlgorithm": "AES256"
+                    }
+                  }
+                ]
+              }
+            }
           }
         },
         "Outputs": {
@@ -405,14 +407,10 @@
     "app": "api-inventory",
     "tenant": "jollej",
     "layers": {},
-    "artifact": "C:\\Users\\Joel\\Desktop\\Inventory\\.serverless\\api-inventory-service.zip"
+    "artifact": "/home/jolle/Desktop/Nodejs/Inventory/.serverless/api-inventory-service.zip"
   },
   "package": {
-<<<<<<< HEAD
-    "artifactDirectoryName": "serverless/api-inventory-service/dev/1547470410194-2019-01-14T12:53:30.194Z",
-=======
-    "artifactDirectoryName": "serverless/api-inventory-service/dev/1548835652971-2019-01-30T08:07:32.971Z",
->>>>>>> 0fef1b770ae4ee8f9cb659f082f841e95438e5a3
+    "artifactDirectoryName": "serverless/api-inventory-service/dev/1551279461590-2019-02-27T14:57:41.590Z",
     "artifact": "api-inventory-service.zip"
   }
 }
