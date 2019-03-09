@@ -1,39 +1,32 @@
-# InventoryApi
-
 https://serverless.com/blog/serverless-express-rest-api/
 
 https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/status
 
-BASE URL: https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/¨
+BASE URL https://5bpht0gsk7.execute-api.us-east-1.amazonaws.com/dev/
+Api-key: jolleisthebest
 
-Api-key="jolleisthebest" 
+GET /availability</br>
+    Return json string with:</br>
+    -id</br>
+    -price</br>
 
-API CALLS:
+GET /availability/{id}</br>
+    Return json string with:</br>
+    -id</br>
+    -price</br>
+    
+    
+POST /decrease, Expect Api-key header.</br>
+Takes json string with:</br>
+    -id</br>
+    -amount</br>
+    
+POST /increase, Expect Api-key header.</br>
+Takes json string with:</br>
+    -id</br>
+    -amount</br>
 
-/availability
-
-Response:
-  -json data
-
-/availaility/{id}
-
-Response:
-  -Specific json data
-
-/increase, Requirement: json {id, amount}
-
-Response:
-  -200ok
-
-/decrease, Requirement: json {id, amount}
-
-Response:
-  -200ok
-
-/createProduct Requirement: json {price, amount}
-
-Response:
-  -201 Added
+    
 
 
 Inventory:
@@ -64,6 +57,3 @@ Functions:
 
 Security:
   - API key for increase and decrease availability
-
-
-DB 
