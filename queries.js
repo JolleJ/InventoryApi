@@ -54,7 +54,7 @@ const getAvailability = (req, res) => {
 }
 
 const getAvailabilitySpecific = (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
     client.query('SELECT * FROM inventory_table WHERE id = $1;', [id], (error, results)=>{
         if(error) {
             throw error;
