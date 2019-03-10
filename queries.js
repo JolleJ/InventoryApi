@@ -33,7 +33,7 @@ const authentication = (req, res, next) => {
     return next();
 }
 
-const createProduct = (req, res) => {
+const createProduct = (id, res) => {
     const price = req.body.price;
     const amount = req.body.amount;
     client.query('INSERT INTO inventory_table (price, availability) VALUES ($1, $2);', [price, amount], (error, results)=>{
