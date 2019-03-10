@@ -3,18 +3,7 @@
   "Description": "The AWS CloudFormation template for this Serverless application",
   "Resources": {
     "ServerlessDeploymentBucket": {
-      "Type": "AWS::S3::Bucket",
-      "Properties": {
-        "BucketEncryption": {
-          "ServerSideEncryptionConfiguration": [
-            {
-              "ServerSideEncryptionByDefault": {
-                "SSEAlgorithm": "AES256"
-              }
-            }
-          ]
-        }
-      }
+      "Type": "AWS::S3::Bucket"
     },
     "AppLogGroup": {
       "Type": "AWS::Logs::LogGroup",
@@ -103,7 +92,11 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/api-inventory-service/dev/1551279461590-2019-02-27T14:57:41.590Z/api-inventory-service.zip"
+<<<<<<< HEAD
+          "S3Key": "serverless/api-inventory-service/dev/1552138413103-2019-03-09T13:33:33.103Z/api-inventory-service.zip"
+=======
+          "S3Key": "serverless/api-inventory-service/dev/1552139411355-2019-03-09T13:50:11.355Z/api-inventory-service.zip"
+>>>>>>> 720d773f3c9b6d13e83dfb0d36c357b97fed29ef
         },
         "FunctionName": "api-inventory-service-dev-app",
         "Handler": "index.handler",
@@ -122,14 +115,22 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "AppLambdaVersionSrrEN30QAFEbUxFXgShQ91yiNhGEKHruzQ4ZMhNXgQ": {
+<<<<<<< HEAD
+    "AppLambdaVersionF39wXAWrXbYvX3I1GYVvJNgi0JB0bdwt6cQHbRJcqQ": {
+=======
+    "AppLambdaVersionDH6CSiPFNYx0CpIGxBLGB45whKnqJkrzBOHZf5lsQ": {
+>>>>>>> 720d773f3c9b6d13e83dfb0d36c357b97fed29ef
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "DtnHqVyQV7garkASpcdg/M5Tncc5SjScDU93Icnz38M="
+<<<<<<< HEAD
+        "CodeSha256": "4AmPQSIEvdw+CQZpz85lnDQYKiGgR84UnfOul4H9KX0="
+=======
+        "CodeSha256": "HTeTHfmX1kKTziTrouJKTvEqRJ9vZw2/q/HaAxhdP14="
+>>>>>>> 720d773f3c9b6d13e83dfb0d36c357b97fed29ef
       }
     },
     "ApiGatewayRestApi": {
@@ -247,7 +248,11 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1551279461730": {
+<<<<<<< HEAD
+    "ApiGatewayDeployment1552138413175": {
+=======
+    "ApiGatewayDeployment1552139411420": {
+>>>>>>> 720d773f3c9b6d13e83dfb0d36c357b97fed29ef
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -317,7 +322,11 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionSrrEN30QAFEbUxFXgShQ91yiNhGEKHruzQ4ZMhNXgQ"
+<<<<<<< HEAD
+        "Ref": "AppLambdaVersionF39wXAWrXbYvX3I1GYVvJNgi0JB0bdwt6cQHbRJcqQ"
+=======
+        "Ref": "AppLambdaVersionDH6CSiPFNYx0CpIGxBLGB45whKnqJkrzBOHZf5lsQ"
+>>>>>>> 720d773f3c9b6d13e83dfb0d36c357b97fed29ef
       }
     },
     "ServiceEndpoint": {
