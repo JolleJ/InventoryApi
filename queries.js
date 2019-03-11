@@ -13,7 +13,16 @@ const client = new Client({
 client.connect();
 
 const checkIfExists = (req, res, next) => {
-    
+    const id = req.body.id;
+    //Checks if the requested id exists otherwise we get the information from the products database and adds it
+    if(client.query("SELET * from inventory_table WHERE id = $1;"), [id] != Null){
+        next();
+    }else{
+        //Add the item to the database
+        createProduct(req);
+        //Then go next
+        next();
+    }
 }
 
 const authentication = (req, res, next) => {
@@ -88,6 +97,7 @@ const increase = (req, res) => {
 
 
 module.exports = {
+    checkIfExists,
     getAvailabilitySpecific,
     authentication,
     createProduct,
