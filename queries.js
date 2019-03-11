@@ -1,5 +1,5 @@
 const { Client } = require('pg');
-const request = require('request')
+const request = require('request');
 
 require('dotenv').config();
 
