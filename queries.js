@@ -44,15 +44,6 @@ const createProduct = (id, res) => {
     });
 }
 
-const getAvailabilitySpecific = (req, res) => {
-    const id = req.body.id;
-    client.query('SELECT * FROM inventory_table WHERE id = $1;', [id], (error, results)=>{
-        if(error) {
-            throw error;
-        }
-        res.status(200).json(results.rows);
-    });
-}
 
 const getAvailability = (req, res) => {
     client.query('SELECT * FROM inventory_table;', (error, results)=>{
