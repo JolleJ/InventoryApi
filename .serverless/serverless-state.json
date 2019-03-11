@@ -117,7 +117,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/api-inventory-service/dev/1552326473256-2019-03-11T17:47:53.256Z/api-inventory-service.zip"
+                "S3Key": "serverless/api-inventory-service/dev/1552326860067-2019-03-11T17:54:20.067Z/api-inventory-service.zip"
               },
               "FunctionName": "api-inventory-service-dev-app",
               "Handler": "index.handler",
@@ -136,14 +136,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AppLambdaVersionZLm9SzzxbMqHQPxMcnK5zvdiOfETVFqaQWs5k6Fxtr0": {
+          "AppLambdaVersionjljMdjihhYNDHBN5FfV0Jel3tSaEL4xeZYknUJkmmyo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "9aQqX5eGtTmWh7Qcegq85UxqArrBG/FCS7IoSlJmkww="
+              "CodeSha256": "jklHTEVmxFh3vjI8c8l6sCvZBIdUxvJZHejLXsWKFzE="
             }
           },
           "ApiGatewayRestApi": {
@@ -261,7 +261,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1552326473428": {
+          "ApiGatewayDeployment1552326860243": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -331,7 +331,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionZLm9SzzxbMqHQPxMcnK5zvdiOfETVFqaQWs5k6Fxtr0"
+              "Ref": "AppLambdaVersionjljMdjihhYNDHBN5FfV0Jel3tSaEL4xeZYknUJkmmyo"
             }
           },
           "ServiceEndpoint": {
@@ -410,7 +410,7 @@
     "artifact": "/home/jolle/Desktop/Nodejs/Inventory/.serverless/api-inventory-service.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/api-inventory-service/dev/1552326473256-2019-03-11T17:47:53.256Z",
+    "artifactDirectoryName": "serverless/api-inventory-service/dev/1552326860067-2019-03-11T17:54:20.067Z",
     "artifact": "api-inventory-service.zip"
   }
 }
