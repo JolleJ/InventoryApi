@@ -12,19 +12,9 @@ const client = new Client({
 
 client.connect();
 
-/*const checkIfExists = (req, res, next) => {
-    request('PRODUCTS API PRODUCTS HERE', { json: true }, (err, res, body) => {
-        if (err) { 
-            return console.log(err); 
-        }
-        //Check if product exists, IF NOT add to database
-
-
-
-        //console.log(body.url);
-        //console.log(body.explanation);
-      });  
-}*/
+const checkIfExists = (req, res, next) => {
+    
+}
 
 const authentication = (req, res, next) => {
     if(req.header("Api-key") != process.env.api_key){
