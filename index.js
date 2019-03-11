@@ -38,7 +38,7 @@ app.get('/availability', db.getAvailability);
 
 app.get('/availability/:id', db.getAvailabilitySpecific);
 
-app.post('/decrease', db.authentication, db.checkIfExists, db.decrease);
+app.post('/decrease', db.authentication, db.decrease);
 
 app.post("/createProduct", db.authentication, db.createProduct);
 
